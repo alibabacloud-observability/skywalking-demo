@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="optional-plugins">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/agent-8.x/optional-plugins/apm-zookeeper-3.4.x-plugin-8.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/agent-8.x/optional-plugins/apm-spring-cloud-gateway-2.0.x-plugin-8.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/agent-8.x/optional-plugins/apm-spring-tx-plugin-8.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/agent-8.x/optional-plugins/apm-gson-2.x-plugin-8.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/agent-8.x/optional-plugins/apm-spring-annotation-plugin-8.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/agent-8.x/optional-plugins/apm-spring-cloud-gateway-2.1.x-plugin-8.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/agent-8.x/optional-plugins/apm-customize-enhance-plugin-8.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/agent-8.x/optional-plugins/apm-kotlin-coroutine-plugin-8.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/agent-8.x/optional-plugins/apm-quartz-scheduler-2.x-plugin-8.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/agent-8.x/optional-plugins/apm-spring-webflux-5.x-plugin-8.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

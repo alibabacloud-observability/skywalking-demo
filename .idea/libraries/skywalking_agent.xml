@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="skywalking-agent">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/agent-8.x/skywalking-agent.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
