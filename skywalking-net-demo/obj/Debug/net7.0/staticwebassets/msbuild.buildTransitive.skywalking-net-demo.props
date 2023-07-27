@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/skywalking-net-demo.props" />
+</Project>
