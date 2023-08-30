@@ -10,12 +10,14 @@
 ## 用SkyWalking为Rust应用埋点
 1. Rust项目引入skywalking-rust
 ```
-# 选择skywalking-rust版本
-该demo使用skywalking-rust 0.6.0版本
+# 前提条件：安装protobuf
+## Debian-base系统
+sudo apt install protobuf-compiler
+## MacOS系统
+brew install protobuf
 
-# 添加skywalking-rust依赖到Cargo.toml文件
-[dependencies]
-skywalking = "0.6.0"
+# 项目添加skywalking-rust
+cargo add skywalking --features vendored
 
 # 引入头文件
 use skywalking::{reporter::grpc::GrpcReporter, trace::tracer::Tracer};
