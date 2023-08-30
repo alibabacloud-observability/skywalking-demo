@@ -1,0 +1,50 @@
+defer func() {
+	if err := recover(); err != nil {
+		// log error
+		log.Errorf("execute interceptor before invoke error, instrument name: %s, interceptor name: %s, function ID: %s, error: %v, stack: %s",
+		    "{{.InstrumentName}}", "{{.InterceptorDefineName}}", "{{.FuncID}}", err, tracing.DebugStack())
+	}
+}()
+invocation = &operator.realInvocation{}
+{{if .Recvs -}}
+invocation.callerInstance = *recv_0	// for caller if exist
+{{- end}}
+invocation.args = make([]interface{}, {{len .Parameters}})
+{{- range $index, $value := .Parameters}}
+invocation.args[{{$index}}] = *param_{{$index}}
+{{- end}}
+invocation.changeArgCallback = func(index int, value interface{}) {
+    {{range $index, $value := .Parameters -}}
+    {{ if ne $index 0}} else {{end}}if index == {{$index}} {
+        res := value.({{$value.PackagedTypeName}})
+        *param_{{$index}} = res
+        invocation.args[{{$index}}] = res
+        return
+    }
+    {{- end}}
+    panic("cannot found the argument index")
+}
+
+// real invoke
+if err := {{.InterceptorVarName}}.BeforeInvoke(invocation); err != nil {
+	// using go2sky log error
+	log.Warnf("execute interceptor before invoke error, instrument name: %s, interceptor name: %s, function ID: %s, error: %v",
+    		    "{{.InstrumentName}}", "{{.InterceptorDefineName}}", "{{.FuncID}}", err)
+	return {{ range $index, $value := .Results -}}
+{{$value.DefaultValueAsString}},
+{{- end}}invocation, false
+}
+if (invocation.isContinue) {
+    {{- range $index, $value := .Results }}
+    var def_res_{{$index}} {{$value.PackagedTypeName}}
+    if invocation.returnValues[{{$index}}] != nil {
+        def_res_{{$index}} = (invocation.returnValues[{{$index}}]).({{$value.PackagedTypeName}})
+    }
+    {{- end}}
+	return {{ range $index, $value := .Results -}}
+    def_res_{{$index}},
+{{- end}}invocation, true
+}
+return {{ range $index, $value := .Results -}}
+{{- if ne $index 0}}, {{end}}{{$value.DefaultValueAsString }}
+{{- end}}{{if .Results}}, {{- end}}invocation, false

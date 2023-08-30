@@ -1,0 +1,10 @@
+.idea/
+*.iml
+.DS_Store
+*~
+.cache/
+/bin
+coverage.txt
+/test/plugins/workspace
+/test/plugins/dist/
+*.pb.go
