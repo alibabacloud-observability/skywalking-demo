@@ -34,3 +34,8 @@ java -javaagent:<work-path>/agent-8.x/skywalking-agent.jar -jar <work-path>/demo
 curl -L localhost:8080/hello
 ```
 4. 在控制台检查应用有没有创建成功以及数据有没有上报成功
+
+## 补充
+```
+根目录下skywalking-agent/为skywalking-java v8.16.0版本包
+```

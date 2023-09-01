@@ -1,12 +1,16 @@
-require('make-promises-safe')
+// require('make-promises-safe')
 
 const {default: agent} = require("skywalking-backend-js");
+// import agent from 'skywalking-backend-js';
 
+// require('make-promises-safe')
 
+// agent.start({
+//     // serviceName: "NodeJs-Agnet",
+//     // serviceInstance: "NodeJs-Agent",
+//     // collectorAddress: "10.114.126.48:11800"
+// });
 agent.start({
-    // serviceName: "NodeJs-Agnet",
-    // serviceInstance: "NodeJs-Agent",
-    // collectorAddress: "10.114.126.48:11800"
 });
 
 
