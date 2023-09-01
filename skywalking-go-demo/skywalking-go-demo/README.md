@@ -12,7 +12,8 @@
 3. 在接入点信息页签的集群信息区域打开显示Token开关。
 4. 在客户端采集工具区域单击SkyWalking，获取接入点信息。
 ## 接入流程
-1. go下载agent依赖。
+1. 下载skywalking-go agent包（已下载，即skywalking-go-0.2.0）
+2. go下载agent依赖。
 ```
 go get -u github.com/apache/skywalking-go
 ```
