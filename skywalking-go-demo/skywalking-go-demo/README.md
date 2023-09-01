@@ -26,6 +26,9 @@ export SW_AGENT_REPORTER_GRPC_AUTHENTICATION=<token>
 3. 构建项目
 ```
 # server
+# <ostype>表示操作系统类型，skywalking-go agent在编译后会生成darwin|linux|windows三种类型的可执行文件
+# /path/to/skywalking-go-0.2.0: 表示skywalking-go agent包的绝对路径（本次demo示例在当前文件夹下）
+# /path/to/config/agent_config.yaml:表示skywalking-go的agent属性配置文件，本次示例在skywalking-go-demo的项目根目录下
 cd server && sudo go build -toolexec "/path/to/skywalking-go-0.2.0/bin/skywalking-go-agent--<ostype>-amd64 -config /path/to/config/agent_config.yaml" -a
 
 # client
