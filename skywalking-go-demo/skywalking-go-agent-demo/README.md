@@ -36,10 +36,15 @@ go build -toolexec="/path/to/skywalking-go-agent" -a -o main .
 
 5. 运行项目
 ```
+export SW_AGENT_NAME=${应用名}
+export SW_AGENT_REPORTER_GRPC_BACKEND_SERVICE=${接入点}
+export SW_AGENT_REPORTER_GRPC_AUTHENTICATION=${鉴权Token}
+export SW_AGENT_REPORTER_GRPC_CDS_FETCH_INTERVAL=-1
+
 ./main
 ```
 
-6. 访问 Go 应用
+1. 访问 Go 应用
 ```
 curl http://localhost:8080/hello
 ```
