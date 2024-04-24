@@ -44,7 +44,7 @@ export SW_AGENT_REPORTER_GRPC_CDS_FETCH_INTERVAL=-1
 ./main
 ```
 
-1. 访问 Go 应用
+6. 访问 Go 应用
 ```
 curl http://localhost:8080/hello
 ```
